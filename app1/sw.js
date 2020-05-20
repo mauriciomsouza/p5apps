@@ -1,4 +1,4 @@
-const version = "0.6.18";
+const version = "1.0.0";
 const cacheName = `maup5app-${version}`;
 self.addEventListener('install', e => {
   e.waitUntil(
