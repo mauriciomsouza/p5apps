@@ -2,7 +2,16 @@
 <head>
   <title>Mauricio</title>
   <link rel="manifest" href="../app1/manifest.webmanifest">
-
+  <link rel="shortcut icon" href="../app1/images/favicon.ico" />
+  <location path="static/mod/practice/service-worker.js">
+    <system.webServer>
+        <httpProtocol>
+            <customHeaders>
+                <add name="Service-Worker-Allowed" value="/" />
+            </customHeaders>
+        </httpProtocol>
+    </system.webServer>
+</location>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- PLEASE NO CHANGES BELOW THIS LINE (UNTIL I SAY SO) -->
@@ -17,11 +26,13 @@
 
 <body>
   <script>
-    if('serviceWorker' in navigator) {
-      navigator.serviceWorker
-               .register('../app1/sw.js')
-               .then(function() { console.log("Service Worker Registered"); });
-    }
+if (navigator.serviceWorker) {
+  navigator.serviceWorker.register('/sw.js').then(function(registration) {
+    console.log('ServiceWorker registration successful with scope:',  registration.scope);
+  }).catch(function(error) {
+    console.log('ServiceWorker registration failed:', error);
+  });
+}
     </script>
 </body>
 </html>
