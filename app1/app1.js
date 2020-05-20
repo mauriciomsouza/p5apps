@@ -1,7 +1,3 @@
-if('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('./pwa-examples/js13kpwa/sw.js');
-};
-
 let particulas = [];
 let b1, b2, c1, c2;
 
