@@ -1,20 +1,20 @@
 {
     "short_name": "Mauricio",
     "name": "Mauricio p5.js App",
-    "description": "Weather forecast information",
+    "description": "First Attempt on PWA Installable",
     "icons": [
       {
-        "src": "../p5apps/app1/images/icons-192.png",
+        "src": "../app1/images/icons-192.png",
         "type": "image/png",
         "sizes": "192x192"
       },
       {
-        "src": ".../p5apps/app1/images/icons-512.png",
+        "src": "../app1/images/icons-512.png",
         "type": "image/png",
         "sizes": "512x512"
       }
     ],
-    "start_url": "/",
+    "start_url": "../app1/index.html",
     "background_color": "#3367D6",
     "display": "fullscreen",
     "theme_color": "#3367D6"
