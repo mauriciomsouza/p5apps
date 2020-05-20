@@ -17,7 +17,5 @@
         "sizes": "512x512"
       }
     ],
-    "start_url": "../app1/index.html",
-    
-
+    "start_url": "../app1/index.html"
   }
