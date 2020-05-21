@@ -1,10 +1,10 @@
 <html>
 <head>
-  <title>Mauricio</title>
+  <title>p5.js PWA WebApp Template</title>
   <meta charset="UTF-8">
   <link rel="manifest" href="../app1/manifest.webmanifest">
   <link rel="shortcut icon" href="../app1/images/favicon.ico" />
-  <meta name="theme-color" content="#1e56a3">
+  <meta name="theme-color" content="#ff195f">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <location path="../app1/sw.js">
@@ -15,29 +15,23 @@
             </customHeaders>
         </httpProtocol>
     </system.webServer>
-</location>
-
-  <!-- PLEASE NO CHANGES BELOW THIS LINE (UNTIL I SAY SO) -->
+  </location>
   <script language="javascript" type="text/javascript" src="libraries/p5.min.js"></script>
-  <script language="javascript" type="text/javascript" src="app1.js"></script>
-  <!-- OK, YOU CAN MAKE CHANGES BELOW THIS LINE AGAIN -->
-  
-  <!-- This line removes any default padding and style.
-       You might only need one of these values set. -->
-  <style> body { padding: 0; margin: 0; overscroll-behavior-y: contain; background-color: #1877ab;} </style>
+  <script language="javascript" type="text/javascript" src="main.js"></script>
+  <style> body { padding: 0; margin: 0; overscroll-behavior-y: contain; background-color: #ff195f;} </style>
 </head>
 
 <body>
   <script>
-if (navigator.serviceWorker) {
-  navigator.serviceWorker.register('../app1/sw.js', {
-    scope: '.'
-  }).then(function(registration) {
-    console.log('ServiceWorker registration successful with scope:',  registration.scope);
-  }).catch(function(error) {
-    console.log('ServiceWorker registration failed:', error);
-  });
-}
-    </script>
+    if (navigator.serviceWorker) {
+      navigator.serviceWorker.register('../app1/sw.js', {
+      scope: '.'
+    }).then(function(registration) {
+      console.log('ServiceWorker registration successful with scope:',  registration.scope);
+    }).catch(function(error) {
+      console.log('ServiceWorker registration failed:', error);
+    });
+    }
+  </script>
 </body>
 </html>

@@ -1,10 +1,10 @@
 {
-    "short_name": "Mauricio",
-    "name": "Mauricio p5.js App",
-    "description": "First Attempt on PWA Installable",
+    "short_name": "p5.js",
+    "name": "p5.js PWA WebApp Template",
+    "description": "Build your offline PWA WebApp and install from browser on any device.",
     "display": "standalone",
-    "theme_color": "#1e56a3",
-    "background_color": "#1e56a3",
+    "theme_color": "#ff195f",
+    "background_color": "#ff195f",
     "icons": [
       {
         "src": "../app1/images/icons-192.png",

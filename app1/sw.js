@@ -1,5 +1,5 @@
 const version = "1.0.0";
-const cacheName = `maup5app-${version}`;
+const cacheName = `p5.js.app-${version}`;
 self.addEventListener('install', e => {
   e.waitUntil(
     caches.open(cacheName).then(cache => {
@@ -13,5 +13,5 @@ self.addEventListener('install', e => {
 });
 
 this.addEventListener('fetch', function (event) {
-    // it can be empty if you just want to get rid of that error
+ 
 });
