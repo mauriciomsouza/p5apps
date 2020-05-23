@@ -1,0 +1,40 @@
+<html>
+<head>
+  <title>p5.js PWA WebApp Template</title>
+  <meta charset="UTF-8">
+  <link rel="manifest" href="../app1/manifest.webmanifest">
+  <link rel="shortcut icon" href="../app1/images/favicon.ico" />
+  <meta name="theme-color" content="#ff195f">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <location path="../app1/sw.js">
+    <system.webServer>
+        <httpProtocol>
+            <customHeaders>
+                <add name="Service-Worker-Allowed" value="/" />
+            </customHeaders>
+        </httpProtocol>
+    </system.webServer>
+  </location>
+  <script language="javascript" type="text/javascript" src="libraries/p5.min.js"></script>
+  <script language="javascript" type="text/javascript" src="main.js"></script>
+  <style> 
+  body { padding: 0; margin: 0; overscroll-behavior-y: contain; background-color: #fff;} 
+  div  {height: 300px; width: 300px; backdrop-filter: blur(20px); box-shadow: 0px 5px 34px -15px rgba(0,0,0,0.55); border-radius: 20px; background: rgba(255,255,255,0.2);}
+  </style>
+</head>
+
+<body>
+  <script>
+    if (navigator.serviceWorker) {
+      navigator.serviceWorker.register('../app1/sw.js', {
+      scope: '.'
+    }).then(function(registration) {
+      console.log('ServiceWorker registration successful with scope:',  registration.scope);
+    }).catch(function(error) {
+      console.log('ServiceWorker registration failed:', error);
+    });
+    }
+  </script>
+</body>
+</html>
