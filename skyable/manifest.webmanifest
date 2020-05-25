@@ -1,10 +1,10 @@
 {
-    "short_name": "p5.js",
-    "name": "p5.js PWA WebApp Template",
-    "description": "Build your offline PWA WebApp and install from browser on any device.",
+    "short_name": "Skyable",
+    "name": "Skyable",
+    "description": "Know if today is good to astronomy activities.",
     "display": "standalone",
-    "theme_color": "#ff195f",
-    "background_color": "#ff195f",
+    "theme_color": "#2E1974",
+    "background_color": "#2E1974",
     "icons": [
       {
         "src": "images/icons-192.png",

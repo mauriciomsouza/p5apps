@@ -2,8 +2,8 @@
 <head>
   <title>p5.js PWA WebApp Template</title>
   <meta charset="UTF-8">
-  <link rel="manifest" href="../app1/manifest.webmanifest">
-  <link rel="shortcut icon" href="../app1/images/favicon.ico" />
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="shortcut icon" href="/images/favicon.ico" />
   <meta name="theme-color" content="#ff195f">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -24,7 +24,7 @@
 <body>
   <script>
     if (navigator.serviceWorker) {
-      navigator.serviceWorker.register('../app1/sw.js', {
+      navigator.serviceWorker.register('sw.js', {
       scope: '.'
     }).then(function(registration) {
       console.log('ServiceWorker registration successful with scope:',  registration.scope);
