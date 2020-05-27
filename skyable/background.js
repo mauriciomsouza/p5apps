@@ -7,13 +7,13 @@ function configuraBg() {
   	}
 }
 
-function desenhaTopbar() {
+function criaTopbar() {
 	logo.resize(0, 25);
 	imageMode(CENTER);
 	image(logo, windowWidth/2, 30);
 }
 
-function desenhaBg() {
+function criaBg() {
 	background(b1);
 	particulas.forEach( particula => {
 		particula.desenha();
