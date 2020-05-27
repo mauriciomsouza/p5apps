@@ -10,7 +10,9 @@ function setup() {
 	createCanvas(windowWidth, windowHeight);
   configuraBg();
   criaPainel();
+  criaApod();
   criaRodape();
+  
 }
 
 function draw() {
