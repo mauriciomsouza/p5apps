@@ -27,7 +27,7 @@ function draw() {
   criaBg();
   criaTopbar();
   if (apodLoaded == true && weatherLoaded == true && lightpolLoaded == true) {
-    if (weatherCloudsRes < 1 && lightpolLv < 700) {
+    if (weatherCloudsRes < 10 && lightpolLv < 700) {
       skystatusTitle.html('Céu Limpo');
       skystatusStatus.html('As condições climáticas e de poluição luminosa da sua área estão favoráveis à prática da astronomia. Aproveite!');
     } else {
