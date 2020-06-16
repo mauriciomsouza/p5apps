@@ -50,7 +50,7 @@ function criaLightpol() {
     lightpolButton.style('color', '#fff');
     lightpolButton.style('border', 'none');
     lightpolButton.style('border-radius', '5px');
-    lightpolButton.style('padding', '10px 10px 20px 10px');
+    lightpolButton.style('padding', '10px 10px 10px 10px');
     lightpolButton.style('margin', '10px 10px');
     lightpolButton.mousePressed(escondeLightpol);
     lightpol.style('height', '100px');

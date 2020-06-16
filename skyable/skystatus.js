@@ -1,0 +1,34 @@
+function criaSkystatus() {
+    skystatus = createElement('div','');
+    skystatus.style('backdrop-filter', 'blur(5px)');
+    skystatus.class('panel');
+    skystatus.style('box-shadow', '0px 5px 34px -15px rgba(0,0,0,0.55)');
+    skystatus.style('background', 'rgba(255,255,255,0.24)');
+    skystatus.style('max-width', "100%");
+    skystatus.style('margin', '10px 15px');
+    skystatus.style('padding-bottom', '5px');
+    skystatus.style('color', '#ccc');
+    skystatus.style('border-radius', '10px');
+    skystatusTitle = createElement('p','Carregando');
+    skystatusTitle.style('font-weight', '500');
+    skystatusTitle.style('text-align', 'center');
+    skystatusTitle.class('skystatus-content');
+    skystatusTitle.style('font-size', '3em');
+    skystatusTitle.style('margin', '15px 15px');
+    skystatusTitle.style('color', '#fff');
+    skystatusTitle.parent(skystatus);
+    skystatusStatus = createElement('p','');
+    skystatusStatus.style('font-weight', '300');
+    skystatusStatus.style('text-align', 'center');
+    skystatusStatus.class('skystatus-content');
+    skystatusStatus.style('font-size', '1em');
+    skystatusStatus.style('margin', '0 15px');
+    skystatusStatus.parent(skystatus);
+    skystatusCity = createElement('p', '');
+    skystatusCity.style('padding', '0 15px');
+    skystatusCity.class('skystatus-content');
+    skystatusCity.style('font-weight', '300');
+    skystatusCity .style('text-align', 'center');
+    skystatusCity.parent(skystatus);
+    skystatus.style('overflow', 'hidden'); 
+}
