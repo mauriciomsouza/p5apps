@@ -72,13 +72,13 @@ function pegaApod() {
 }
 
 function pegaLightpol(lon, lat) {
-  //httpGet('https://pechincha-api-dev.herokuapp.com/api/lightpol', 'json', false, function(response) {
-    //urlLightpol = 'https://cors-anywhere.herokuapp.com/https://www.lightpollutionmap.info/QueryRaster/?qk='+response+'&ql=wa_2015&qt=point&qd='+lon+','+lat;
-    //httpDo(urlLightpol, {
-      //method: 'GET'
-    //}).then(response => {
-      //lightpolLv = parseFloat(response);
-      lightpolLv = 1*1000;
+  httpGet('https://pechincha-api-dev.herokuapp.com/api/lightpol', 'json', false, function(response) {
+    urlLightpol = 'https://cors-anywhere.herokuapp.com/https://www.lightpollutionmap.info/QueryRaster/?qk='+response+'&ql=wa_2015&qt=point&qd='+lon+','+lat;
+    httpDo(urlLightpol, {
+      method: 'GET'
+    }).then(response => {
+      lightpolLv = parseFloat(response);
+      lightpolLv = lightpolLv*1000;
       console.log(lightpolLv);
       if (lightpolLv < 50) {
         lightpolStatus = 'Muito Baixa';
@@ -98,14 +98,14 @@ function pegaLightpol(lon, lat) {
       }
       lightpolLoaded = true;
       criaLightpol();
-    //})
-    //.catch(err => {
-    //  lightpolStatus = "Erro";
-    //  lightpolExp = 'O Servidor não conseguiu a informação de poluição luminosa para sua região.';
-    //  console.log(err);
-    //  criaLightpol();
-    //});
-  //});
+    })
+    .catch(err => {
+      lightpolStatus = "Erro";
+      lightpolExp = 'O Servidor não conseguiu a informação de poluição luminosa para sua região.';
+      console.log(err);
+      criaLightpol();
+    });
+  });
 }
 
 
