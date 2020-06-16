@@ -78,13 +78,12 @@ function criaWeather() {
 }
 
 function mostraWeather(){
-  httpGet(urlWeather, 'json', false, function(response) {
-    weatherTemp.html(Math.floor(response.main.temp-273.15)+'ºC');
-    weatherCity.html( response.name);
-    weatherStatus.html( response.weather[0].description.toUpperCase());
-    weatherImg.style('background-image', 'url(http://openweathermap.org/img/wn/'+response.weather[0].icon+'@2x.png)');
-    weatherImg.style('height', '100px');
-    weatherIcon.hide();
+  weatherTemp.html(weatherTempRes+'ºC');
+  weatherCity.html(weatherCityRes);
+  weatherStatus.html(weatherStatusRes);
+  weatherImg.style('background-image', 'url(http://openweathermap.org/img/wn/'+weatherImgRes+'@2x.png)');
+  weatherImg.style('height', '100px');
+  weatherIcon.hide();
   weatherLabel.hide();
   weatherTemp.show();
   weatherImg.show();
@@ -95,7 +94,6 @@ function mostraWeather(){
   weather.style('overflow', 'visible');
   weatherButton.style('width' ,weather.size().width-20+'px');
   weatherButton.show();
-  })
 };
 
 function escondeWeather(){

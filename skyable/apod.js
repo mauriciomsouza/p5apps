@@ -67,11 +67,9 @@ function criaApod() {
 }
 
 function mostraApod(){
-  let urlApod = 'https://api.nasa.gov/planetary/apod?api_key=3NfLfgsWUq1UUTgyf12v0DXh74LvscaEHe1ag2qa&date=2017-07-08';
-  httpGet(urlApod, 'json', false, function(response) {
-    apodImg.style('background-image', 'url('+response.url+')');
-    apodTitle.html( response.title );
-    apodExplanation.html(response.explanation);
+    apodImg.style('background-image', 'url('+apodImgRes+')');
+    apodTitle.html(apodTitleRes);
+    apodExplanation.html(apodExplanationRes);
     apodIcon.hide();
     apodLabel.hide();
     apodTitle.show();
@@ -82,7 +80,6 @@ function mostraApod(){
     apod.style('overflow', 'visible');
     apodButton.style('width' ,apod.size().width-20+'px');
     apodButton.show();
-  })
 };
 
 function escondeApod(){

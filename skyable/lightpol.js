@@ -8,18 +8,9 @@ function criaLightpol() {
     lightpol.style('margin', '10px 15px');
     lightpol.style('color', '#ccc');
     lightpol.style('border-radius', '10px');
+    lightpol.style('padding-top', '15px');
     lightpol.style('padding-bottom', '5px');
     lightpol.mouseClicked(mostraLightpol);
-    lightpolImg = createDiv('');
-    lightpolImg.parent(lightpol);
-    lightpolImg.class('lightpol-content');
-    lightpolImg.style('max-width', '100%');
-    lightpolImg.style('height', '250px');
-    lightpolImg.style('background-image', '');
-    lightpolImg.style('background-position', 'center');
-    lightpolImg.style('background-size', 'cover');
-    lightpolImg.style('background-repeat', 'no-repeat');
-    lightpolImg.style('border-radius', '10px 10px 0px 0px');
     lightpolIcon = createImg('images/lightpolIcon.png','');
     lightpolIcon.parent(lightpol);
     lightpolIcon.class('lightpol-content');
@@ -43,6 +34,10 @@ function criaLightpol() {
     lightpolTitle.class('lightpol-content');
     lightpolTitle.style('font-size', '1.5em');
     lightpolTitle.style('padding', '0 15px');
+    lightpolTitle.style('text-align', 'center');
+    lightpolTitle.style('margin-top', '20px');
+    lightpolTitle.style('color', '#fff');
+    lightpolTitle.style('color', '#fff');
     lightpolTitle.parent(lightpol);
     lightpolExplanation = createElement('p', '');
     lightpolExplanation.style('padding', '0 15px');
@@ -60,7 +55,6 @@ function criaLightpol() {
     lightpolButton.mousePressed(escondeLightpol);
     lightpol.style('height', '100px');
     lightpol.style('overflow', 'hidden');
-    lightpolImg.hide();
     lightpolTitle.hide();
     lightpolExplanation.hide();
     lightpolButton.hide();
@@ -68,21 +62,17 @@ function criaLightpol() {
 }
 
 function mostraLightpol(){
-  httpGet(urlLightpol, 'json', false, function(response) {
-    lightpolImg.style('background-image', 'url('+response.url+')');
-    lightpolTitle.html( response.title );
-    lightpolExplanation.html(response.explanation);
-    lightpolIcon.hide();
+  lightpolTitle.html(lightpolStatus);
+  lightpolExplanation.html(lightpolExp);
+  lightpolIcon.hide();
   lightpolLabel.hide();
   lightpolTitle.show();
-  lightpolImg.show();
   lightpolExplanation.show();
   lightpol.style('height', '');
   lightpol.style('width', '');
   lightpol.style('overflow', 'visible');
   lightpolButton.style('width' ,lightpol.size().width-20+'px');
   lightpolButton.show();
-  })
 };
 
 function escondeLightpol(){
@@ -90,7 +80,6 @@ function escondeLightpol(){
   lightpolLabel.show();
   lightpolTitle.hide();
   lightpolButton.hide();
-  lightpolImg.hide();
   lightpolExplanation.hide();
   lightpol.style('height', '100px');
   lightpol.style('overflow', 'hidden');
