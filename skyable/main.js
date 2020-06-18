@@ -30,6 +30,9 @@ function draw() {
     if (weatherCloudsRes < 10 && lightpolLv < 700) {
       skystatusTitle.html('Céu Limpo');
       skystatusStatus.html('As condições climáticas e de poluição luminosa da sua área estão favoráveis à prática da astronomia. Aproveite!');
+    } else if (weatherCloudsRes < 10 && lightpolLv > 700) {
+      skystatusTitle.html('Condições Restritas');
+      skystatusStatus.html('As condições climáticas e de poluição luminosa da sua área permitem desempenho limitado devido à poluição luminosa da sua área.');
     } else {
       skystatusTitle.html('Sem Condições');
       skystatusStatus.html('As condições climáticas e de poluição luminosa da sua área não permitem um bom desempenho para a prática de atividades astronômicas.');
@@ -56,12 +59,13 @@ function pegaLocalizacao(position) {
 }
 
 function pegaApod() {
-  let d = new Date();
-  let dia = d.getDay();
-  let mes = d.getMonth();
-  let ano = d.getFullYear();
-  let data = ano+'-'+mes+'-'+dia;
-  let urlApod = 'https://api.nasa.gov/planetary/apod?api_key=3NfLfgsWUq1UUTgyf12v0DXh74LvscaEHe1ag2qa&date='+data;
+  var today = new Date();
+  var dd = String(today.getDate()).padStart(2, '0');
+  var mm = String(today.getMonth() + 1).padStart(2, '0');
+  var yyyy = today.getFullYear();
+  today = yyyy+'-'+mm+'-'+dd;
+  let urlApod = 'https://api.nasa.gov/planetary/apod?api_key=3NfLfgsWUq1UUTgyf12v0DXh74LvscaEHe1ag2qa&date='+today;
+  console.log(urlApod);
   httpGet(urlApod, 'json', false, function(response) {
     apodImgRes = response.url;
     apodTitleRes =  response.title;
